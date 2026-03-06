@@ -6,8 +6,17 @@ export const refactorCode = async (code: string) => {
     messages: [
       {
         role: "system",
-        content:
-          "You are an expert software engineer.Refactor the given code to improve readability and maintainability.Avoid unnecessary functions or over-engineering.Keep the logic identical.Return only the improved code."
+        content: `
+You are a senior software engineer.
+
+Refactor the given code to improve readability, structure, and maintainability.
+
+Rules:
+- Do NOT add comments
+- Do NOT add explanations
+- Return ONLY the improved code
+- Preserve the original logic
+`
       },
       {
         role: "user",
