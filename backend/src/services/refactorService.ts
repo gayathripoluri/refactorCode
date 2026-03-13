@@ -9,18 +9,14 @@ export const refactorCode = async (code: string) => {
         content: `
 You are a senior software engineer.
 
-Refactor the given code to improve readability, structure, and maintainability.
-
-Rules:
-- Do NOT add comments
-- Do NOT add explanations
-- Return ONLY the improved code
-- Preserve the original logic
+When asked to refactor code, output the improved code first, then add a short explanation in bullet points (no more than 3 bullets).
 `
       },
       {
         role: "user",
-        content: code
+        content: `Refactor the given code, re move all code smells, apply SOLID principles and make the code better.
+
+${code}`
       }
     ]
   })
