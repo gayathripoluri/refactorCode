@@ -54,13 +54,11 @@ body {
   line-height: 1.6;
 }
 
-/* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   letter-spacing: -0.02em;
 }
 
-/* Prism.js syntax highlighting */
 code[class*="language-"],
 pre[class*="language-"] {
   color: #e0e0e0;
@@ -120,7 +118,6 @@ pre[class*="language-"] {
   color: #b5cea8;
 }
 
-/* Button Styles */
 button {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -133,7 +130,6 @@ button:active:not(:disabled) {
   transform: translateY(0);
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;

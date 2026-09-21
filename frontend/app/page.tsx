@@ -5,6 +5,8 @@ import axios from "axios"
 import ReactMarkdown from "react-markdown"
 import DiffViewer from "react-diff-viewer-continued"
 
+const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "http://localhost:5000"
+
 export default function Home() {
   const fileInputRef = useRef<HTMLInputElement | null>(null)
   const [code, setCode] = useState("")
@@ -24,7 +26,7 @@ export default function Home() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/refactor",
+        `${API_BASE}/api/refactor`,
         { code }
       )
 
@@ -32,7 +34,7 @@ export default function Home() {
 
       setExplainLoading(true)
       const explainResponse = await axios.post(
-        "http://localhost:5000/api/refactor/explain",
+        `${API_BASE}/api/refactor/explain`,
         {
           originalCode: code,
           refactoredCode: response.data.refactoredCode
